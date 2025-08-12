@@ -2,17 +2,16 @@ package io.github.davidsantana06.service;
 
 import java.util.List;
 
-import io.github.davidsantana06.service.base.GameEngine;
 import io.github.davidsantana06.model.Gesture;
+import io.github.davidsantana06.service.base.GameEngine;
 
 public class TableService {
 
-    public String[][] tabulateGames(List<GameEngine> games) {
-        int totalRows = games.size() + 1;
-        int totalColumns = 2;
+    private static final String[] GAME_HEADER = { "Nº", "TITLE" };
+    private static final String[] GESTURE_HEADER = { "Nº", "GESTURE", "WINS AGAINST", "LOSES AGAINST" };
 
-        String[][] tabulatedGames = new String[totalRows][totalColumns];
-        tabulatedGames[0] = new String[] {"Nº", "TITLE"};
+    public String[][] tabulateGames(List<GameEngine> games) {
+        String[][] tabulatedGames = createTable(GAME_HEADER, games);
 
         int currentRow = 1;
         for (GameEngine game : games) {
@@ -25,13 +24,7 @@ public class TableService {
     }
 
     public String[][] tabulateGestures(List<Gesture> gestures) {
-        int totalRows = gestures.size() + 1;
-        int totalColumns = 4;
-
-        String[][] tabulatedGestures = new String[totalRows][totalColumns];
-        tabulatedGestures[0] = new String[] {
-            "Nº", "GESTURE", "WINS AGAINST", "LOSES AGAINST"
-        };
+        String[][] tabulatedGestures = createTable(GESTURE_HEADER, gestures);
 
         int currentRow = 1;
         for (Gesture gesture : gestures) {
@@ -43,5 +36,13 @@ public class TableService {
         }
 
         return tabulatedGestures;
+    }
+
+    private static String[][] createTable(String[] header, List<?> entries) {
+        int totalRows = entries.size() + 1;
+        int totalColumns = header.length;
+        String[][] table = new String[totalRows][totalColumns];
+        table[0] = header;
+        return table;
     }
 }
