@@ -10,9 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.RepeatedTest;
 import static org.junit.jupiter.api.Assertions.*;
 
-import io.github.davidsantana06.model.Gesture;
-import io.github.davidsantana06.model.Hand;
-import io.github.davidsantana06.model.Result;
+import io.github.davidsantana06.model.*;
 import io.github.davidsantana06.service.RockPaperScissorsLizardSpockService;
 
 @DisplayName("RockPaperScissorsLizardSpockService Tests")

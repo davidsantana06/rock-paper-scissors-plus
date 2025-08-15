@@ -35,7 +35,6 @@ class GameRegistryServiceTest {
 
         assertEquals(expectedGames.size(), actualGames.size());
 
-
         assertTrue(
             actualGames.stream().anyMatch(game -> game instanceof RockPaperScissorsService)
         );

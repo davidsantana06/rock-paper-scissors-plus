@@ -3,6 +3,7 @@ package io.github.davidsantana06.model;
 import io.github.davidsantana06.facade.OutputFacade;
 
 public enum Result {
+
     WINS("wins against", OutputFacade.GREEN),
     LOSES("loses against", OutputFacade.RED),
     DRAWS("draws with", OutputFacade.YELLOW);
