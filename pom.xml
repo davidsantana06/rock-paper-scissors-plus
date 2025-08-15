@@ -9,7 +9,7 @@
   <version>0.0.0</version>
 
   <name>rock-paper-scissors-plus</name>
-  <description></description>
+  <description>Rock Paper Scissors variants with modular SPI design for easy extension</description>
   <url>https://github.com/davidsantana06/rock-paper-scissors-plus</url>
 
   <properties>
