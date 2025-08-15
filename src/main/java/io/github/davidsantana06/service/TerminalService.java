@@ -85,8 +85,8 @@ public class TerminalService {
     private int readSelectionIndex(int maxValue) throws RuntimeException {
         String input;
         int number = -1;
-        boolean isValid = false;
 
+        boolean isValid = false;
         while (!isValid) {
             input = scanner.nextLine().trim();
 

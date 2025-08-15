@@ -15,7 +15,7 @@ public class GameRegistryService {
         availableGames = new ArrayList<>();
         ServiceLoader.load(GameEngine.class).forEach(availableGames::add);
     }
-    
+
     public List<GameEngine> getAvailableGames() { return availableGames; }
 
     public void setCurrentGame(GameEngine currentGame) { 

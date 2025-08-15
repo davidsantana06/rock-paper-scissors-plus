@@ -3,9 +3,7 @@ package io.github.davidsantana06.service.base;
 import java.util.List;
 import java.util.Random;
 
-import io.github.davidsantana06.model.Gesture;
-import io.github.davidsantana06.model.Hand;
-import io.github.davidsantana06.model.Result;
+import io.github.davidsantana06.model.*;
 
 public abstract class GameEngine {
 
