@@ -9,7 +9,7 @@
   <version>0.0.0</version>
 
   <name>rock-paper-scissors-plus</name>
-  <description></description>
+  <description>Console-based Rock Paper Scissors game with two additional variants, designed with SPI for easy extension</description>
   <url>https://github.com/davidsantana06/rock-paper-scissors-plus</url>
 
   <properties>
