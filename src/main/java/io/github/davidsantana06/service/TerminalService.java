@@ -92,7 +92,7 @@ public class TerminalService {
 
             boolean isZero = "0".equals(input);
             if (isZero) throw new RuntimeException("User requested exit");
-            
+
             boolean isNumber = input.matches("\\d+");
             if (!isNumber) {
                 OutputFacade.printBox("Enter a valid number", OutputFacade.RED);

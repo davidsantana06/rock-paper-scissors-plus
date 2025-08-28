@@ -26,26 +26,20 @@ class GameRegistryServiceTest {
     @Test
     @DisplayName("Should load exactly three game services")
     void testGetAvailableGames() {
-        List<GameEngine> expectedGames = List.of(
-            new RockPaperScissorsService(),
-            new RockPaperScissorsNineService(),
-            new RockPaperScissorsLizardSpockService()
+        List<Class<? extends GameEngine>> expectedGameClasses = List.of(
+            RockPaperScissorsService.class,
+            RockPaperScissorsNineService.class,
+            RockPaperScissorsLizardSpockService.class
         );
         List<GameEngine> actualGames = gameRegistryService.getAvailableGames();
 
-        assertEquals(expectedGames.size(), actualGames.size());
+        assertEquals(expectedGameClasses.size(), actualGames.size());
 
-        assertTrue(
-            actualGames.stream().anyMatch(game -> game instanceof RockPaperScissorsService)
-        );
-        assertTrue(
-            actualGames.stream().anyMatch(game -> game instanceof RockPaperScissorsNineService)
-        );
-        assertTrue(
-            actualGames.stream().anyMatch(
-                game -> game instanceof RockPaperScissorsLizardSpockService
-            )
-        );
+        for (Class<? extends GameEngine> gameClass : expectedGameClasses) {
+            assertTrue(
+                actualGames.stream().anyMatch(game -> gameClass.isInstance(game))
+            );
+        }
     }
 
     @Test
