@@ -47,6 +47,15 @@ Available games include:
 | **Lizard**   | Paper, Spock     | Rock, Scissors   |
 | **Spock**    | Rock, Scissors   | Paper, Lizard    |
 
+### 🕳️ Rock Paper Scissors Well
+
+| Gesture      | Wins against   | Loses against |
+| ------------ | -------------- | ------------- |
+| **Rock**     | Scissors       | Paper, Well   |
+| **Paper**    | Rock, Well     | Scissors      |
+| **Scissors** | Paper          | Rock, Well    |
+| **Well**     | Rock, Scissors | Paper         |
+
 ## 🛠️ Installation and Execution
 
 This project was built with **Java 21** and **Maven 3.9** for dependency management. From the root directory, compile and run:
@@ -75,9 +84,10 @@ This and other projects on my profile were developed independently. Any support 
 
 ## 📚 References
 
-- SENIOR JAVA TECHNICAL INTERVIEW R\$10K CLT BR COMPANY. YouTube, available at: https://youtube.com/watch?v=r_SRTbbtlD4.
-- RPS-9. UMOP, available at: https://umop.com/rps9.htm.
-- Rock, Paper, Scissors, Lizard, Spock. The Big Bang Theory Wiki, available at: https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock.
+- **SENIOR JAVA TECHNICAL INTERVIEW R\$10K CLT BR COMPANY**. YouTube, available at: https://youtube.com/watch?v=r_SRTbbtlD4.
+- **RPS-9**. UMOP, available at: https://umop.com/rps9.htm.
+- **Rock, Paper, Scissors, Lizard, Spock**. The Big Bang Theory Wiki, available at: https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock.
+- **rock, paper, scissors, well**. Mathematics Stack Exchange, available at: https://math.stackexchange.com/questions/410558/rock-paper-scissors-well
 
 ## ⚖️ License
 
