@@ -1,6 +1,8 @@
 package io.github.davidsantana06.service;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import io.github.davidsantana06.model.Gesture;
 import io.github.davidsantana06.service.base.GameEngine;
@@ -30,8 +32,8 @@ public class TableService {
         for (Gesture gesture : gestures) {
             tabulatedGestures[currentRow][0] = String.valueOf(currentRow);
             tabulatedGestures[currentRow][1] = gesture.name();
-            tabulatedGestures[currentRow][2] = String.join(", ", gesture.winsAgainst());
-            tabulatedGestures[currentRow][3] = String.join(", ", gesture.losesAgainst());
+            tabulatedGestures[currentRow][2] = formatGestureRelations(gesture.winsAgainst());
+            tabulatedGestures[currentRow][3] = formatGestureRelations(gesture.losesAgainst());
             currentRow++;
         }
 
@@ -44,5 +46,9 @@ public class TableService {
         String[][] table = new String[totalRows][totalColumns];
         table[0] = header;
         return table;
+    }
+
+    private static String formatGestureRelations(Set<String> gestures) {
+        return gestures.stream().sorted().collect(Collectors.joining(", "));
     }
 }
