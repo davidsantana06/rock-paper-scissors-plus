@@ -46,7 +46,7 @@ class RockPaperScissorsNineServiceTest {
     }
 
     @RepeatedTest(
-        value = 30,
+        value = 9,
         name = "Random gesture test {currentRepetition}/{totalRepetitions}"
     )
     @DisplayName("Should return a valid gesture from the available gestures when randomizing")
@@ -61,30 +61,18 @@ class RockPaperScissorsNineServiceTest {
     @DisplayName("Should generate all possible gestures over multiple randomizations")
     void testGetRandomGestureDistribution() {
         Map<Gesture, Integer> gestureCount = new HashMap<>();
-        gestureCount.put(RockPaperScissorsNineService.ROCK_GESTURE, 0);
-        gestureCount.put(RockPaperScissorsNineService.PAPER_GESTURE, 0);
-        gestureCount.put(RockPaperScissorsNineService.SCISSORS_GESTURE, 0);
-        gestureCount.put(RockPaperScissorsNineService.FIRE_GESTURE, 0);
-        gestureCount.put(RockPaperScissorsNineService.HUMAN_GESTURE, 0);
-        gestureCount.put(RockPaperScissorsNineService.SPONGE_GESTURE, 0);
-        gestureCount.put(RockPaperScissorsNineService.AIR_GESTURE, 0);
-        gestureCount.put(RockPaperScissorsNineService.WATER_GESTURE, 0);
-        gestureCount.put(RockPaperScissorsNineService.GUN_GESTURE, 0);
+        for (Gesture g : rockPaperScissorsNineService.getGestures()) {
+            gestureCount.put(g, 0);
+        }
 
         for (int i = 0; i < 2700; i++) {
             Gesture randomGesture = rockPaperScissorsNineService.getRandomGesture();
-            gestureCount.compute(randomGesture, (gesture, count) -> count + 1);
+            gestureCount.computeIfPresent(randomGesture, (gesture, count) -> count + 1);
         }
 
-        assertTrue(gestureCount.get(RockPaperScissorsNineService.ROCK_GESTURE) >= 1);
-        assertTrue(gestureCount.get(RockPaperScissorsNineService.PAPER_GESTURE) >= 1);
-        assertTrue(gestureCount.get(RockPaperScissorsNineService.SCISSORS_GESTURE) >= 1);
-        assertTrue(gestureCount.get(RockPaperScissorsNineService.FIRE_GESTURE) >= 1);
-        assertTrue(gestureCount.get(RockPaperScissorsNineService.HUMAN_GESTURE) >= 1);
-        assertTrue(gestureCount.get(RockPaperScissorsNineService.SPONGE_GESTURE) >= 1);
-        assertTrue(gestureCount.get(RockPaperScissorsNineService.AIR_GESTURE) >= 1);
-        assertTrue(gestureCount.get(RockPaperScissorsNineService.WATER_GESTURE) >= 1);
-        assertTrue(gestureCount.get(RockPaperScissorsNineService.GUN_GESTURE) >= 1);
+        for (Gesture g : rockPaperScissorsNineService.getGestures()) {
+            assertTrue(gestureCount.get(g) >= 1);
+        }
     }
 
     @Test

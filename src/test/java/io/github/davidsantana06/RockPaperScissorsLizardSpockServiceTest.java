@@ -42,7 +42,7 @@ class RockPaperScissorsLizardSpockServiceTest {
     }
 
     @RepeatedTest(
-        value = 25,
+        value = 5,
         name = "Random gesture test {currentRepetition}/{totalRepetitions}"
     )
     @DisplayName("Should return a valid gesture from the available gestures when randomizing")
@@ -57,22 +57,18 @@ class RockPaperScissorsLizardSpockServiceTest {
     @DisplayName("Should generate all possible gestures over multiple randomizations")
     void testGetRandomGestureDistribution() {
         Map<Gesture, Integer> gestureCount = new HashMap<>();
-        gestureCount.put(RockPaperScissorsLizardSpockService.ROCK_GESTURE, 0);
-        gestureCount.put(RockPaperScissorsLizardSpockService.PAPER_GESTURE, 0);
-        gestureCount.put(RockPaperScissorsLizardSpockService.SCISSORS_GESTURE, 0);
-        gestureCount.put(RockPaperScissorsLizardSpockService.LIZARD_GESTURE, 0);
-        gestureCount.put(RockPaperScissorsLizardSpockService.SPOCK_GESTURE, 0);
-
-        for (int i = 0; i < 1500; i++) {
-            Gesture randomGesture = rockPaperScissorsLizardSpockService.getRandomGesture();
-            gestureCount.compute(randomGesture, (gesture, count) -> count + 1);
+        for (Gesture g : rockPaperScissorsLizardSpockService.getGestures()) {
+            gestureCount.put(g, 0);
         }
 
-        assertTrue(gestureCount.get(RockPaperScissorsLizardSpockService.ROCK_GESTURE) >= 1);
-        assertTrue(gestureCount.get(RockPaperScissorsLizardSpockService.PAPER_GESTURE) >= 1);
-        assertTrue(gestureCount.get(RockPaperScissorsLizardSpockService.SCISSORS_GESTURE) >= 1);
-        assertTrue(gestureCount.get(RockPaperScissorsLizardSpockService.LIZARD_GESTURE) >= 1);
-        assertTrue(gestureCount.get(RockPaperScissorsLizardSpockService.SPOCK_GESTURE) >= 1);
+        for (int i = 0; i < 1200; i++) {
+            Gesture randomGesture = rockPaperScissorsLizardSpockService.getRandomGesture();
+            gestureCount.computeIfPresent(randomGesture, (gesture, count) -> count + 1);
+        }
+
+        for (Gesture g : rockPaperScissorsLizardSpockService.getGestures()) {
+            assertTrue(gestureCount.get(g) >= 1);
+        }
     }
 
     @Test

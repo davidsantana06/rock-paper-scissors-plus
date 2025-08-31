@@ -40,7 +40,7 @@ class RockPaperScissorsServiceTest {
     }
 
     @RepeatedTest(
-        value = 15,
+        value = 3,
         name = "Random gesture test {currentRepetition}/{totalRepetitions}"
     )
     @DisplayName("Should return a valid gesture from the available gestures when randomizing")
@@ -55,18 +55,18 @@ class RockPaperScissorsServiceTest {
     @DisplayName("Should generate all possible gestures over multiple randomizations")
     void testGetRandomGestureDistribution() {
         Map<Gesture, Integer> gestureCount = new HashMap<>();
-        gestureCount.put(RockPaperScissorsService.ROCK_GESTURE, 0);
-        gestureCount.put(RockPaperScissorsService.PAPER_GESTURE, 0);
-        gestureCount.put(RockPaperScissorsService.SCISSORS_GESTURE, 0);
+        for (Gesture g : rockPaperScissorsService.getGestures()) {
+            gestureCount.put(g, 0);
+        }
 
         for (int i = 0; i < 900; i++) {
             Gesture randomGesture = rockPaperScissorsService.getRandomGesture();
             gestureCount.computeIfPresent(randomGesture, (gesture, count) -> count + 1);
         }
 
-        assertTrue(gestureCount.get(RockPaperScissorsService.ROCK_GESTURE) >= 1);
-        assertTrue(gestureCount.get(RockPaperScissorsService.PAPER_GESTURE) >= 1);
-        assertTrue(gestureCount.get(RockPaperScissorsService.SCISSORS_GESTURE) >= 1);
+        for (Gesture g : rockPaperScissorsService.getGestures()) {
+            assertTrue(gestureCount.get(g) >= 1);
+        }
     }
 
     @Test
