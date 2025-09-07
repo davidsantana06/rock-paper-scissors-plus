@@ -2,7 +2,6 @@ package io.github.davidsantana06;
 
 import java.util.List;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,8 +17,7 @@ class GameRegistryServiceTest {
 
     private GameRegistryService gameRegistryService;
 
-    @BeforeEach
-    void setUp() {
+    {
         gameRegistryService = new GameRegistryService();
     }
 
@@ -46,7 +44,6 @@ class GameRegistryServiceTest {
     @DisplayName("Should have current game undefined initially")
     void testGetCurrentGame_InitiallyNull() {
         GameEngine currentGame = gameRegistryService.getCurrentGame();
-
         assertNull(currentGame);
     }
 
@@ -55,9 +52,7 @@ class GameRegistryServiceTest {
     void testGetCurrentGame_AfterSetting() {
         GameEngine expectedGame = new RockPaperScissorsService();
         gameRegistryService.setCurrentGame(expectedGame);
-
         GameEngine actualGame = gameRegistryService.getCurrentGame();
-
         assertNotNull(actualGame);
         assertEquals(expectedGame, actualGame);
     }
