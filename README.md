@@ -1,10 +1,17 @@
-**Rock Paper Scissors Plus** is a Java console application featuring three versions of the classic game: the traditional Classic with 3 gestures, the extended RPS-9 with 9, and the popular Rock Paper Scissors Lizard Spock with 5.
+<img
+src="./assets/usage.gif"
+alt="Rock Paper Scissors Plus — Usage"
+style="width: 100%"
+/>
+
+**✂️ Rock Paper Scissors Plus ➕** is a Java console application featuring three versions of the classic game: the traditional Classic with 3 gestures, the extended RPS-9 with 9, and the popular Rock Paper Scissors Lizard Spock with 5.
 
 It uses a modular architecture based on the **Service Provider Interface (SPI)**, allowing easy addition of new variants while keeping a consistent terminal interface and gameplay.
 
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Maven](https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white)
 ![JUnit5](https://img.shields.io/badge/junit5-25A162?style=for-the-badge&logo=junit5&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 
 ## 🕹️ How to Play
 
@@ -49,7 +56,7 @@ Available games include:
 
 ## 🛠️ Installation and Execution
 
-This project was built with **Docker** and **Docker Compose**. From the root directory, build and run:
+Built with **Docker** and **Docker Compose**. From the root directory, build and run:
 
 ```bash
 docker compose build
@@ -58,19 +65,18 @@ docker compose run --rm -it rock-paper-scissors-plus
 
 ## 🤝 Donation
 
-If you like this project and want to support it financially, you can contribute via **PayPal** or **Pix** — _aos meus chegados do Brasil_ — by clicking one of the options below:
+If you like the project and want to support it financially, you can contribute via **PayPal** or **Pix** — _aos meus chegados do Brasil_ — by clicking one of the options below:
 
-[![PayPal](https://img.shields.io/badge/PayPal-Donate-1040C1?labelColor=121661&style=for-the-badge&logo=paypal&link=https://www.paypal.com/donate/?hosted_button_id=2P9HPGUP7Z43S)](https://www.paypal.com/donate/?hosted_button_id=2P9HPGUP7Z43S)
-[![Pix](https://img.shields.io/badge/Pix-Donate-FBB88A?labelColor=F26722&style=for-the-badge&logo=pix&logoColor=ffffff&link=https://tipa.ai/davidsantana06)](https://tipa.ai/davidsantana06)
-
-This and other projects on my profile were developed independently. Any support to keep them going is greatly appreciated!
+[![PayPal](https://img.shields.io/badge/PayPal-Donate-1040C1?labelColor=121661&style=for-the-badge&logo=paypal)](https://www.paypal.com/donate/?hosted_button_id=2P9HPGUP7Z43S)
+&nbsp;
+[![Pix](https://img.shields.io/badge/Pix-Doar-FBB88A?labelColor=F26722&style=for-the-badge&logo=pix&logoColor=ffffff)](https://tipa.ai/davidsantana06)
 
 ## 📚 References
 
-- SENIOR JAVA TECHNICAL INTERVIEW R\$10K CLT BR COMPANY. YouTube, available at: https://youtube.com/watch?v=r_SRTbbtlD4.
-- RPS-9. UMOP, available at: https://umop.com/rps9.htm.
-- Rock, Paper, Scissors, Lizard, Spock. The Big Bang Theory Wiki, available at: https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock.
+- SENIOR JAVA TECHNICAL INTERVIEW R$10K CLT BR COMPANY. YouTube, available at: [https://youtube.com/watch?v=r_SRTbbtlD4](https://youtube.com/watch?v=r_SRTbbtlD4).
+- RPS-9. UMOP, available at: [https://umop.com/rps9.htm](https://umop.com/rps9.htm).
+- Rock, Paper, Scissors, Lizard, Spock. The Big Bang Theory Wiki, available at: [https://bigbangtheory.fandom.com/wiki/Rock,\_Paper,\_Scissors,\_Lizard,\_Spock](https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock).
 
 ## ⚖️ License
 
-This project uses the **MIT License**, allowing you to use and modify the code freely. The only requirement is to give proper credit, recognizing the effort and time invested.
+Licensed under the **MIT License**, allowing free use and modification with proper credit.
