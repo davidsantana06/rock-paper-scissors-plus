@@ -49,19 +49,11 @@ Available games include:
 
 ## 🛠️ Installation and Execution
 
-This project was built with **Java 21** and **Maven 3.9** for dependency management. From the root directory, compile and run:
+This project was built with **Docker** and **Docker Compose**. From the root directory, build and run:
 
 ```bash
-mvn clean package
-java -cp target/classes io.github.davidsantana06.App
-```
-
-## 🧪 Test Coverage
-
-Unit tests validate the main functionalities implemented in the service layer. To run them, use:
-
-```bash
-mvn test
+docker compose build
+docker compose run --rm -it rock-paper-scissors-plus
 ```
 
 ## 🤝 Donation

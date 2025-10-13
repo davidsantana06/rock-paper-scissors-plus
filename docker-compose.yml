@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  rock-paper-scissors-plus:
+    build: .
+    stdin_open: true
+    tty: true
+    image: rock-paper-scissors-plus
